@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+      name: order
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#rabbitmq配置
+logging:
+  level:
+    org.springframework.web: trace
+    org.springframework.cloud.openfeign: debug

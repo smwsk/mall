@@ -1,0 +1,32 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: CONFIG
+  cloud:
+    config:
+      server:
+        git:
+          username: smwsk
+          password: js0524
+          uri: https://gitee.com/smwsk/mall
+          basedir: D:\Study\Spring\workspace\mall\config\target\baseDir
+
+logging:
+  level:
+    root: info
+    java.sql: debug
+    org.springframework.cloud.bus: trace
+    org.springframework.web: trace
+
+#暴露所有接口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+server:
+  port: 8100
