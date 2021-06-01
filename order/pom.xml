@@ -45,12 +45,6 @@
                 <artifactId>product-client</artifactId>
             </dependency>
 
-            <dependency>
-                <groupId>com.smwsk.mall</groupId>
-                <artifactId>order-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -61,11 +55,6 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-
-        <dependency>
-            <groupId>com.smwsk.mall</groupId>
-            <artifactId>order-common</artifactId>
-        </dependency>
     </dependencies>
 
 </project>

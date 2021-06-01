@@ -11,7 +11,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients //开启feign通讯
+//@EnableFeignClients //开启feign通讯
 public class ProductApplication {
 
 	public static void main(String[] args) {

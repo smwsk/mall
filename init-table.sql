@@ -32,5 +32,25 @@ create table product_image_info
 
 alter table product_image_info comment '产品图片表';
 
+/*用户表*/
 
+create table admin_user
+(
+  tid varchar(32) not null comment '主键id',
+  username varchar (32) not null comment '用户名',
+  password varchar (32) not null comment '密码',
+  status int comment '用户状态',
+  `create_datetime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_datetime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+)
 
+/*用户登录凭证表*/
+
+create table user_token
+(
+  tid bigint(20) not null comment '主键id',
+  token varchar (32) not null comment '登录凭证',
+  expire_time datetime not null comment '过期时间',
+  `create_datetime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_datetime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+)

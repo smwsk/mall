@@ -12,7 +12,7 @@ import java.util.Objects;
 @Table(name = "product_info", schema = "spring-cloud-mall", catalog = "")
 public class ProductInfoEntity {
 	@Id
-	private String tid;
+	private String productId;
 	private String productName;
 	private Integer productStock;
 	private String productDescription;

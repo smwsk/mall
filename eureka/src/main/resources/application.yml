@@ -12,4 +12,3 @@ spring:
     name: eureka
 server:
   port: 8761
-
