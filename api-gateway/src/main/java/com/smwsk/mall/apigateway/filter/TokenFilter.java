@@ -3,11 +3,19 @@ package com.smwsk.mall.apigateway.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
+import com.smwsk.mall.apigateway.config.ApplicationConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
+
+import java.util.List;
 
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.*;
 
@@ -16,6 +24,9 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  */
 @Component
 public class TokenFilter extends ZuulFilter {
+
+	@Autowired
+	ApplicationConfig applicationConfig;
 
 	@Override
 	public String filterType() {
@@ -34,6 +45,14 @@ public class TokenFilter extends ZuulFilter {
 
 	@Override
 	public boolean shouldFilter() {
+		RequestContext currentContext = RequestContext.getCurrentContext();
+		HttpServletRequest request = currentContext.getRequest();
+		String requestURI = request.getRequestURI();
+		for (String whiteUrl : applicationConfig.getWhiteList()) {
+			if(whiteUrl.contains(requestURI)){
+				return false;
+			}
+		}
 		return true;
 	}
 

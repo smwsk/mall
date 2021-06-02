@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://123.207.33.93:8761/eureka/
     healthcheck:
       enabled: false
 spring:
@@ -10,7 +10,7 @@ spring:
       discovery:
         enabled: true
         service-id: CONFIG
-      profile: dev
+      profile: test
       label: master
       name: product
   application:
