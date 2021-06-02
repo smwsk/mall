@@ -20,14 +20,14 @@ logging:
   level:
     org.springframework.web: trace
     org.springframework.cloud.openfeign: debug
-zuul:
-  routes:
-#  简介写法
-    product: /myProduct/**
-    sensitiveHeaders:
-# 禁止访问的地址
-  ignored-patterns:
-    - /**/product/listForOrder
+#zuul:
+#  routes:
+##  简介写法
+#    product: /myProduct/**
+#    sensitiveHeaders:
+## 禁止访问的地址
+#  ignored-patterns:
+#    - /**/product/listForOrder
 # 另外一种写法
 #    myProduct:
 #      path: /myProduct/**

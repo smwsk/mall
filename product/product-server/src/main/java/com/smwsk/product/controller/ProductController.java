@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/product/")
+@RequestMapping
 public class ProductController {
 
 	@Autowired
@@ -29,7 +29,7 @@ public class ProductController {
 		return pageMsg.msg(entityPage);
 	}
 
-	@RequestMapping(value = "/findUpAllProductInfo")
+	@GetMapping(value = "/findUpAllProductInfo")
 	public RespMsg findUpAllProductInfo(){
 		return RespMsg.success(productInfoService.findUpAllProductInfo());
 	}

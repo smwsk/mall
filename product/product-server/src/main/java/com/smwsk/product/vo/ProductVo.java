@@ -17,6 +17,6 @@ public class ProductVo extends ProductInfoEntity {
 
 	private String imageUrl;
 
-	private boolean isMainImage;
+	private Boolean isMainImage;
 
 }
