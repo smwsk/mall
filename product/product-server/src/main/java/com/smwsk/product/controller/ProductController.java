@@ -23,10 +23,10 @@ public class ProductController {
 
 
 	@GetMapping(value = "listProductPage")
-	public PageMsg listProductPage(PageMsg pageMsg){
+	public RespMsg listProductPage(PageMsg pageMsg){
 		Pageable pageable = PageRequest.of(pageMsg.getCurrentPage(),pageMsg.getPageSize());
 		Page<ProductVo> entityPage = productInfoService.listProductPage(pageable);
-		return pageMsg.msg(entityPage);
+		return RespMsg.success(pageMsg.msg(entityPage));
 	}
 
 	@GetMapping(value = "/findUpAllProductInfo")

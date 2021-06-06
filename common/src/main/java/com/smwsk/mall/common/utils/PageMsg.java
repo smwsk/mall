@@ -27,7 +27,7 @@ public class PageMsg<T> {
 	/**
 	 * 总数量
 	 */
-	private long sumPageSize;
+	private long totalNumber;
 
 	/**
 	 * 消息内容
@@ -38,7 +38,7 @@ public class PageMsg<T> {
 		List<T> content = entityPage.getContent();
 		this.setData(content);
 		this.setTotalPage(entityPage.getTotalPages());
-		this.setSumPageSize(entityPage.getTotalElements());
+		this.setTotalNumber(entityPage.getTotalElements());
 		return this;
 	}
 
