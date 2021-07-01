@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://123.207.33.93:8761/eureka/
+    healthcheck:
+      enabled: false
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: test
+      label: master
+      name: product
+  application:
+    name: product
